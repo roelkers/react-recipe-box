@@ -41,9 +41,7 @@ class Recipe extends React.Component {
 }
 
 class RecipeModal extends React.Component{
-  constructor(props){
-    super(props);
-  }
+
   render() {
     if(this.props.showModal === false)
       return null;
@@ -53,7 +51,12 @@ class RecipeModal extends React.Component{
       <div>
         <Modal show={true} onHide={this.props.close}>
           <Modal.Header closeButton>
-            <Modal.Title>New Recipe</Modal.Title>
+            <Modal.Title>
+             {this.props.showModal === "new" ?
+               "New Recipe" :
+               "Edit Recipe"
+             }
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <form>
@@ -174,7 +177,6 @@ class App extends React.Component {
       return;
     }
      //check if recipe with that name is already defined
-    const found = this.state.recipes.find((recipe)=>recipe.name===this.state.titleInput);
     const ingredients = this.state.ingredientsInput.split(",");
     const recipe = {
       name : this.state.titleInput,

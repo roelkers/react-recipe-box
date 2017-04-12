@@ -2,7 +2,7 @@
   "name": "recipe-box",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://roelkers.github.io/react-recipe-box",
+  "homepage": "https://roelkers.github.io/react-recipe-box",
   "dependencies": {
     "react": "^15.5.4",
     "react-bootstrap": "^0.30.8",
@@ -10,9 +10,12 @@
   },
   "devDependencies": {
     "bootstrap-css": "^4.0.0-alpha.5",
+    "gh-pages": "^0.12.0",
     "react-scripts": "0.9.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
